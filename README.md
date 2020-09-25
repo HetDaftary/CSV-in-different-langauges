@@ -32,4 +32,3 @@ The string pointer stores all the parts here.
 For C:
 We are using a dynamic array like ArrayList of Java.
 We are making modules for Split and Join, ArrayList and CSV in this part. 
-Modules go like Split and Join -> ArrayList -> CSV -> main file.
