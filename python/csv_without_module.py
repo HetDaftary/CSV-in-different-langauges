@@ -1,12 +1,27 @@
-delimiter_to_read = ","
-delimiter_to_write = ", "
+'''
+@author Het Daftary
+@version 1.0
+@GitHub "https://github.com/HetDaftary/CSV_in_different_langauges"
+We have a CSV class and two static methods that could be used as needed. 
+We are going with list of parts format to store data. 
+'''
 
-with open('../csv_files/Sample100.csv') as csv_file:
-    data = [x.strip().split(",") for x in csv_file.readlines()]
-    with open('../Results/Python/without_module/1.csv', 'w') as csv_write_file:
-        csv_write_file.write('\n'.join([', '.join(x) for x in data]))
+class CSV:
+    @staticmethod
+    def csv_reader(file_name, delimiter):
+        fptr = open(file_name, "r")
+        data = [x.strip().split(delimiter) for x in fptr.readlines()]
+        # We are using list comprehension of Python to store the output of split in one line. 
+        fptr.close()
+        return data
+    
+    @staticmethod
+    def csv_writer(data, delimiter, file_name):
+        fptr = open(file_name, "w")
+        for line in data:
+            fptr.write(delimiter.join(line))
+            fptr.write("\n")
+        fptr.close()
 
-with open('../csv_files/Sample500.csv') as csv_file:
-    data = [x.strip().split(",") for x in csv_file.readlines()]
-    with open('../Results/Python/without_module/2.csv', 'w') as csv_write_file:
-        csv_write_file.write('\n'.join([', '.join(x) for x in data]))
+CSV.csv_writer(CSV.csv_reader("../csv_files/Sample100.csv", ","), ", ", "../Results/Python/without_module/1.csv")
+CSV.csv_writer(CSV.csv_reader("../csv_files/Sample500.csv", ","), ", ", "../Results/Python/without_module/2.csv")
