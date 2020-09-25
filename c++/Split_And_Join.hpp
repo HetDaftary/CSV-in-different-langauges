@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author Het Daftary
+ * @version 1.0
+ * @GitHub "https://github.com/HetDaftary/CSV_in_different_langauges"
+ * This file has the split and join functions for using with CSV. 
+ */
+
 #include <iostream>
 #include <string>
 using namespace std;

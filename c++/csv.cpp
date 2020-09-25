@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author Het Daftary
+ * @version 1.0
+ * @GitHub "https://github.com/HetDaftary/CSV_in_different_langauges"
+ * This file helps us to test the things by putting everything together. 
+ */
+
 #include "CSV.hpp"
 #define number_of_fields 5
 int main() {

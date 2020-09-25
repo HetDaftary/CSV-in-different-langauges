@@ -1,3 +1,12 @@
+/**
+ * 
+ * @author Het Daftary
+ * @version 1.0
+ * @GitHub "https://github.com/HetDaftary/CSV_in_different_langauges"
+ * This file has the read and write funcitons for CSV file. 
+ * We will be using vector of string* here to store data. 
+ */
+
 #include <vector>
 #include <fstream>
 #include "Split_And_Join.hpp"
