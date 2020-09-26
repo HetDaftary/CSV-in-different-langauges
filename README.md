@@ -18,7 +18,7 @@ We join the parts using join function.
 Then we write this line using file write operation. 
 
 For Python: 
-We are using just string operations split and joinof Python . 
+We are using just string operations split and join functions of Python. 
 We are using a list which will store all the list of words. 
 
 For Java:
