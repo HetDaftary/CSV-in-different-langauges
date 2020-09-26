@@ -11,7 +11,7 @@ Logic:
 Read part:
 We read the file in line by line manner. 
 We split the line using split function to split the data with delimiter. 
-We store this output to the data and give the data back.
+We store this output to the data and give the data.
 
 Write part: 
 We join the parts using join function. 
