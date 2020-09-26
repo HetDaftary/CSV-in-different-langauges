@@ -7,7 +7,7 @@ Source for CSV files: https://www.appsloveworld.com/sample-csv-file/.
 Task: Read the CSV files with delimiter "," and write it with delimiter ", ".
 @version: 1.0
 
-Logic:nd TRP game
+Logic:
 Read part:
 We read the file in line by line manner. 
 We split the line using split function to split the data with delimiter. 
