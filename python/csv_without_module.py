@@ -36,7 +36,7 @@ class CSV:
     
     @staticmethod
     def generate_random_string(mode, length): # Helper for generate_random_csv.
-        chars_for_use = [list(map(chr, list(range(ord('A'), ord('Z') + 1)))), list(map(chr, list(range(ord('a'), ord('z') + 1)))), list(map(chr, list(range(ord('a'), ord('z') + 1)))) + list(map(chr, list(range(ord('A'), ord('Z') + 1)))) + list(map(chr, list(range(ord('0'), ord('0') + 10))))]
+        chars_for_use = [list(map(chr, list(range(ord('a'), ord('z') + 1)))), list(map(chr, list(range(ord('A'), ord('Z') + 1)))), list(map(chr, list(range(ord('a'), ord('z') + 1)))) + list(map(chr, list(range(ord('A'), ord('Z') + 1)))) + list(map(chr, list(range(ord('0'), ord('0') + 10))))]
         return ''.join([random.choice(chars_for_use[mode]) for i in range(length)])
 
     @staticmethod
