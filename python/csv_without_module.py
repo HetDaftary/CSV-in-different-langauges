@@ -70,4 +70,4 @@ class CSV:
 
 CSV.csv_writer(CSV.csv_reader("../csv_files/Sample100.csv", ","), ", ", "../Results/Python/without_module/1.csv")
 CSV.csv_writer(CSV.csv_reader("../csv_files/Sample500.csv", ","), ", ", "../Results/Python/without_module/2.csv")
-CSV.generate_random_csv("../Results/Python/without_module/3.csv", ",", [['int', 5, 10], ['float', 4, 6], ['alphabets_lower_Case', 5], ['alphabets_upper_Case', 7], ['random_string', 4]], 20000)
+CSV.generate_random_csv("../Results/Python/3.csv", ",", [['int', 5, 10], ['float', 4, 6], ['alphabets_lower_Case', 5], ['alphabets_upper_Case', 7], ['random_string', 4]], 20000)
