@@ -74,22 +74,19 @@ string generate_random_double(double lower, double upper) {
 }
 
 string generate_random_string(int mode, int length) {
-    string answer = "";
-    static const char for_lower_case[] = {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'};
-    static const char for_upper_case[] = {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'};
-    static const char for_random_str[] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-
-
+    char arr[length + 1];
+    
     if (mode == 0) // Lower case alphabets.
         for (int i = 0; i < length; i++)     
-            answer = answer + for_lower_case[rand() % 26];
+            arr[i] = (char)(97 + (rand() % 26));
     else if (mode == 1) // Upper case alphabets.
         for (int i = 0; i < length; i++) 
-            answer = answer + for_upper_case[rand() % 26];
+            arr[i] = (char)(65 + (rand() % 26));
     else if (mode == 2) // Random strings.
         for (int i = 0; i < length; i++)
-            answer = answer + for_random_str[rand() % 74];
-    return answer + "\0";
+            arr[i] = (char)(48 + (rand() % 74));
+    arr[length] = '\0';
+    return string(arr);
 }
 
 void generate_random_csv(string file_name, string delimiter, int capacity, vector<Field> fields) {
