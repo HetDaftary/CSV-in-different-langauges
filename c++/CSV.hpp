@@ -1,17 +1,17 @@
 /**
  * 
  * @author Het Daftary
- * @version 2.0
+ * @version 2.1
  * @GitHub "https://github.com/HetDaftary/CSV_in_different_langauges"
  * This file has the read and write funcitons for CSV file. 
  * We will be using vector of string* here to store data. 
  * Version 2.0 has a feature to generate Random CSV files. 
+ * For Version 2.1, we have 
  */
 
-#include <vector>
 #include <fstream>
-#include <cstdlib>
 #include <string>
+#include <cstdlib>
 #include "Split_And_Join.hpp"
 
 class Field {
@@ -38,29 +38,33 @@ class Field {
     }
 };
 
-vector<string*> csv_reader(string file_name, string delimiter, int number_of_fields) {
+vector<vector<string>> csv_reader(string file_name, string delimiter) {
+    vector<vector<string>> data;
+
     fstream csv_file;
-    vector<string*> data;
-    string temp_line;
     csv_file.open(file_name, ios::in);
 
-    if(csv_file.is_open()) 
-        while (getline(csv_file, temp_line)) 
-            data.push_back(split_String(temp_line, delimiter, number_of_fields));
-    else
-        cout << "Check the file name and path" << endl;
+    string temp_line;
+    vector<string> to_insert;
+
+    if (csv_file.is_open()) 
+        while (getline(csv_file, temp_line))
+            data.push_back(split_String(temp_line, delimiter));
+    else 
+        cout << "Error. Return empty data." << endl;
     csv_file.close();
     return data;
 }
 
-void csv_writer(vector<string*> data, string delimiter, int number_of_fields, string file_name) {
+void csv_writer(vector<vector<string>> data, string delimiter, string file_name) {
     fstream csv_file;
     csv_file.open(file_name, ios::out);
-    if(csv_file.is_open()) 
-        for(string* parts: data)
-            csv_file << join_Strings(parts, delimiter, number_of_fields) << "\n";
+
+    if (csv_file.is_open())
+        for (vector<string> parts_of_str: data) 
+            csv_file << join_Strings(parts_of_str, delimiter);
     else
-        cout << "Error" << endl;
+        cout << "Error. Creating empty file." << endl;
     csv_file.close();
 }
 
@@ -96,30 +100,27 @@ void generate_random_csv(string file_name, string delimiter, int capacity, vecto
      * Vector library is already used by other functions. Thus, dependencies do not increase. 
      */
     fstream fptr;
-    string* to_write; 
-    int count = 0, i, j, number_of_fields = fields.size();
+    vector<string> to_write; 
 
     fptr.open(file_name, ios::out);
 
     if (fptr.is_open()) {
-        for (i = 0; i < capacity; i++) {
-            to_write = new string[number_of_fields];
-            count = 0;
+        for (int i = 0; i < capacity; i++) {
             for(Field i: fields) {
-                
+                to_write.clear();            
                 if (!(i.field_name.compare("int"))) 
-                    to_write[count++] = generate_random_int(i.lower_int, i.upper_int);
+                    to_write.push_back(generate_random_int(i.lower_int, i.upper_int));
                 else if (!(i.field_name.compare("float")))
-                    to_write[count++] = generate_random_double(i.lower_double, i.upper_double);
+                    to_write.push_back(generate_random_double(i.lower_double, i.upper_double));
                 else if (!(i.field_name.compare("alphabets_lower_Case")))
-                    to_write[count++] = generate_random_string(0, i.lower_int);
+                    to_write.push_back(generate_random_string(0, i.lower_int));
                 else if (!(i.field_name.compare("alphabets_upper_Case")))
-                    to_write[count++] = generate_random_string(1, i.lower_int);
+                    to_write.push_back(generate_random_string(1, i.lower_int));
                 else
-                    to_write[count++] = generate_random_string(2, i.lower_int);
+                    to_write.push_back(generate_random_string(2, i.lower_int));
             }
 
-            fptr << join_Strings(to_write, delimiter, number_of_fields) + "\n";
+            fptr << join_Strings(to_write, delimiter) + "\n";
         }
     } else {
         cout << "Error" << endl;
