@@ -7,7 +7,7 @@ Source for CSV files: https://www.appsloveworld.com/sample-csv-file/.
 Task: 
 1. Read the CSV files with delimiter "," and write it with delimiter ", ".
 2. Generate a Random CSV file. Delimiter for this ",".
-@version: 2.0
+@version: 2.1
 
 Logic:
 Read part:
@@ -31,5 +31,5 @@ We are ArrayList of String array which stores all the parts of String in Java.
 
 For C++: 
 We are writing the new library for split and join funcitons. 
-We are using vector of String* here. 
+We are using vector of vector<String> here. 
 The string pointer stores all the parts here. 
