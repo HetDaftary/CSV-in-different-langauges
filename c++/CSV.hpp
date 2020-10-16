@@ -6,7 +6,6 @@
  * This file has the read and write funcitons for CSV file. 
  * We will be using vector of string* here to store data. 
  * Version 2.0 has a feature to generate Random CSV files. 
- * For Version 2.1, we have 
  */
 
 #include <fstream>
