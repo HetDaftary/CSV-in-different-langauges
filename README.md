@@ -9,28 +9,28 @@ Task:
 2. Generate a Random CSV file. Delimiter for this ",".
 
 @version: 2.1
-
-Logic:
-Read part:
+<br/><br/>
+Logic:<br/>
+Read part:<br/>
 We read the file in line by line manner. 
 We split the line using split function to split the data with delimiter. 
 We store this output to the data and give the data back.
-
-Write part: 
+<br/>
+Write part:<br/> 
 We join the parts using join function. 
 Then we write this line using file write operation. 
-
-Random part: 
+<br/>
+Random part:<br/> 
 We have support to generate some random numbers, random strings and random from some given data. We will generate the things as required and parse it to string and join with the delimiter. 
-
-For Python: 
+<br/>
+For Python: <br/>
 We are using just string operations split and join functions of Python. 
 We are using a list which will store all the list of words. 
-
-For Java:
-We are ArrayList of String array which stores all the parts of String in Java. 
-
-For C++: 
+<br/>
+For Java:<br/>
+We use ArrayList of String array which stores all the parts of String in Java. 
+<br/>
+For C++:<br/> 
 We are writing the new library for split and join funcitons. 
 We are using vector of vector<String> here. 
 The string pointer stores all the parts here. 
