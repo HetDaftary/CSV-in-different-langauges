@@ -44,5 +44,5 @@ Hacktoberfest is a celebration open to everyone in our global community.
 Pull requests can be made in participating GitHub-hosted repositories/projects, classified with the Hacktoberfest topic.
 You can sign up anytime between October 1 and October 31.
 
-You can go the website for more information. 
-https://hacktoberfest.digitalocean.com/
+You can go the [website](https://hacktoberfest.digitalocean.com/) for more information. 
+
