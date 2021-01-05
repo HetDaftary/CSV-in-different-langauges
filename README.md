@@ -21,7 +21,8 @@ Task:
   - Then we write this line using file write operation. 
 
 - Random part:
-    - We have support to generate some random numbers, random strings and random from some given data. We will generate the things as required and parse it to string and join with the delimiter. 
+    - We have support to generate some random numbers, random strings and random from some given data. 
+    - We will generate the things as required and parse it to string and join with the delimiter. 
 
 - For Python: 
   - We are using just string operations split and join functions of Python. 
