@@ -9,7 +9,7 @@ Source for CSV files: https://www.appsloveworld.com/sample-csv-file/.
 1. Read the CSV files with delimiter "," and write it with delimiter ", ".
 2. Generate a Random CSV file. Delimiter for this ",".
 
-<b>@version: 2.1</b>
+<b>@version: 2.2</b>
 
 # Logic:
 - Read part:
